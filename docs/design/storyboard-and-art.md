@@ -2,7 +2,7 @@
 
 Status: textual production storyboard and character specification. Production illustrations, sprite sheets and visual approval are future work; the initializer uses drawn placeholders.
 
-## Art alternatives
+## Approved direction and evaluated alternatives
 
 | Direction | Strength | Cost / concern |
 | --- | --- | --- |
@@ -10,7 +10,9 @@ Status: textual production storyboard and character specification. Production il
 | Painted cut-paper diorama | Rich terrain and clear 2.5D depth; easy modular foliage | Layer edges and joints can look mechanical; larger texture budget |
 | Clean illustrated vector | Scalable, inexpensive recolors, precise silhouettes | Can feel sterile; detailed nature needs deliberate shape variety |
 
-Proposed direction: pixel illustration with broad color masses and restrained texture, continuous transforms for soft scenery motion, and crisp ball/flipper silhouettes. Avoid blanket blur. Compare the same forest scene in all three treatments before commissioning the complete asset set. The foundation does not settle this decision.
+Approved direction: pixel illustration with broad color masses and restrained texture, continuous transforms for smooth scenery motion, and crisp ball/flipper silhouettes. Avoid blanket blur and camera snapping. The alternatives above record the evaluation; a three-style comparison is no longer required. Individual character designs and production assets still need visual review.
+
+Compose gameplay for portrait mobile proportions. Keep the playable corridor centered on wider displays, using scenic margins without stretching the world or revealing extra routes. Design both cinematic handoffs and the summit panorama around the same portrait composition.
 
 ## Character guide
 

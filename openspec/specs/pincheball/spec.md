@@ -49,3 +49,11 @@ Scenery SHALL transition continuously from valley water and flats through forest
 - **THEN** a bounded flock takes flight and leaves respond
 - **AND** nearby animals may flee or later approach with curiosity, including rabbits and deer
 - **AND** remote trees and creatures do not all restart the same reaction
+
+### Requirement: Portrait pixel illustration with smooth motion
+The game SHALL use pixel illustration with smooth continuous motion and SHALL target portrait mobile proportions. Wider displays SHALL preserve the centered portrait gameplay corridor and use surrounding space for scenery without stretching geometry or exposing additional routes. Cinematics and the summit view SHALL be composed for portrait.
+
+#### Scenario: Wide display framing
+- **WHEN** the game is displayed on a wide screen
+- **THEN** the portrait gameplay corridor retains its proportions and route visibility
+- **AND** scenic margins fill the surrounding space

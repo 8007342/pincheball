@@ -12,7 +12,7 @@ The hiker rests on a rock before play and appears on the summit after completion
 
 Left-half touch or Left arrow drives every left flipper in the active simulation region; right-half touch or Right arrow drives every right flipper. Each flipper has a clear side marking and consistent hinge orientation. Both sides can be held simultaneously. Track pointer IDs independently, latch each pointer's side on press, and release on cancel, focus loss, pause or pointer up. Keyboard repeat cannot add impulses. Hold raises a flipper; release returns it. Opening gestures are consumed by the transition, not silently applied to the first shot.
 
-Physics uses one 2D collision plane. 2.5D comes from layered art, depth tint, shadows and terrain relief, rather than changing collision distances with perspective. Ball size and flipper reach stay constant. HUD and touch halves remain aligned with the screen. Portrait is the initial proposed gameplay composition; landscape adds scenic margins without revealing extra routes or reducing challenge.
+Physics uses one 2D collision plane. 2.5D comes from layered art, depth tint, shadows and terrain relief, rather than changing collision distances with perspective. Ball size and flipper reach stay constant. HUD and touch halves remain aligned with the screen. Portrait mobile proportions are the approved gameplay target. Wider displays add scenic margins around the centered portrait corridor without stretching it, revealing extra routes or reducing challenge. Pixel illustration with smooth continuous motion is the approved art direction.
 
 ## Generation and boundaries
 
