@@ -133,7 +133,10 @@ class _MountainScreenState extends State<MountainScreen>
 }
 
 class MountainGame extends FlameGame {
-  MountainGame({int? seed}) : model = MountainModel(seed: seed ?? DateTime.now().millisecondsSinceEpoch);
+  MountainGame({int? seed})
+    : model = MountainModel(
+        seed: seed ?? DateTime.now().millisecondsSinceEpoch,
+      );
   final MountainModel model;
   late final MountainScene scene = MountainScene(model);
   final restartAvailable = ValueNotifier(false);
@@ -151,7 +154,9 @@ class MountainGame extends FlameGame {
 
   Rect get stage => Rect.fromLTWH(
     (size.x - math.min(size.x, size.y * 420 / 780)) / 2,
-    0, math.min(size.x, size.y * 420 / 780), size.y,
+    0,
+    math.min(size.x, size.y * 420 / 780),
+    size.y,
   );
   double get viewportScale => stage.width / 420;
   double get viewHeight => size.y / viewportScale;
@@ -174,11 +179,15 @@ class MountainGame extends FlameGame {
     time += elapsed;
     if (intro) {
       transitionTime += elapsed;
-      if (transitionTime >= 1.8) { intro = false; playing = true; }
+      if (transitionTime >= 1.8) {
+        intro = false;
+        playing = true;
+      }
     }
     if (won) {
       transitionTime += elapsed;
-      if (transitionTime >= 3 && !restartAvailable.value) restartAvailable.value = true;
+      if (transitionTime >= 3 && !restartAvailable.value)
+        restartAvailable.value = true;
     }
     if (!playing || won || size.x <= 0 || size.y <= 0) return;
     model.left = left;
@@ -190,23 +199,47 @@ class MountainGame extends FlameGame {
       cameraX = model.ball.x;
       cameraBottom = 0;
     }
-    if (model.won) { won = true; transitionTime = 0; }
+    if (model.won) {
+      won = true;
+      transitionTime = 0;
+    }
     final lead = (model.velocity.x * .18).clamp(-65.0, 65.0);
-    final targetX = (model.ball.x + lead).clamp(210.0, MountainModel.width - 210);
-    final targetY = (model.ball.y - viewHeight * (model.velocity.y >= 0 ? .38 : .62)).clamp(0.0, MountainModel.height - viewHeight * .5);
+    final targetX = (model.ball.x + lead).clamp(
+      210.0,
+      MountainModel.width - 210,
+    );
+    final targetY =
+        (model.ball.y - viewHeight * (model.velocity.y >= 0 ? .38 : .62)).clamp(
+          0.0,
+          MountainModel.height - viewHeight * .5,
+        );
     final smooth = 1 - math.exp(-elapsed * 5);
     cameraX += (targetX - cameraX) * smooth;
     cameraBottom += (targetY - cameraBottom) * smooth;
     // Safety framing is stronger than decorative camera easing.
     cameraX = cameraX.clamp(model.ball.x - 160, model.ball.x + 160);
-    cameraBottom = cameraBottom.clamp(model.ball.y - viewHeight + 90, model.ball.y - 90).clamp(0.0, MountainModel.height);
+    cameraBottom = cameraBottom
+        .clamp(model.ball.y - viewHeight + 90, model.ball.y - 90)
+        .clamp(0.0, MountainModel.height);
   }
 
   @override
   void render(Canvas canvas) {
     super.render(canvas);
     if (size.x <= 0 || size.y <= 0) return;
-    painter.render(canvas, Size(size.x, size.y), stage, model, scene, cameraX, cameraBottom,
-      time, playing: playing, intro: intro, won: won, transitionTime: transitionTime);
+    painter.render(
+      canvas,
+      Size(size.x, size.y),
+      stage,
+      model,
+      scene,
+      cameraX,
+      cameraBottom,
+      time,
+      playing: playing,
+      intro: intro,
+      won: won,
+      transitionTime: transitionTime,
+    );
   }
 }
