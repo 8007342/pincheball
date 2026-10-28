@@ -2,7 +2,7 @@
 
 A Flutter + Flame mountain pinball game: one ball, many flippers, and a living world to climb from a lakeside valley to a snowy summit.
 
-The initial prototype explores grouped left/right controls, procedural terraces, scrolling mountain scenery and a summit target. It is a foundation; organic generation, production art, wildlife, complete cinematic flow and the 5–15 minute balance target remain planned.
+The small open-world proof spans several portrait screens horizontally and vertically. A two-axis camera traverses a seeded cone mountain with branch flippers, deflecting trees, waterfalls and animal caves that eject the ball. Persistent composable scenery follows Ranitas’s world-layer principles. Organic route validation, full wildlife, polished cinematics and the later 5–15 minute target remain planned.
 
 ## Run
 

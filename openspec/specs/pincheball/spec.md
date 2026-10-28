@@ -7,7 +7,7 @@ This specification records the intended game. The initial runnable scaffold impl
 ## Requirements
 
 ### Requirement: One climb with no scoring system
-The game SHALL represent the hiker's struggle with one abstract ball, with no multiball, score, lives or checkpoints. Reaching the trailhead basin after falling SHALL restart the run and reset its progress. The terrain SHALL be procedurally composed with a finite summit and SHALL target 5–15 minutes of successful active play after balancing.
+The game SHALL represent the hiker's struggle with one abstract ball, with no multiball, score, lives or checkpoints. Reaching the trailhead basin after falling SHALL restart the run and reset its progress. The terrain SHALL be procedurally composed with a finite summit and SHALL target 5–15 minutes of successful active play after balancing. The initial completeness slice SHALL use a small mountain only a few screens wide and tall; short runs are acceptable during validation.
 
 #### Scenario: Fall to the base
 - **GIVEN** a ball has climbed above the trailhead
@@ -51,9 +51,22 @@ Scenery SHALL transition continuously from valley water and flats through forest
 - **AND** remote trees and creatures do not all restart the same reaction
 
 ### Requirement: Portrait pixel illustration with smooth motion
-The game SHALL use pixel illustration with smooth continuous motion and SHALL target portrait mobile proportions. Wider displays SHALL preserve the centered portrait gameplay corridor and use surrounding space for scenery without stretching geometry or exposing additional routes. Cinematics and the summit view SHALL be composed for portrait.
+The game SHALL use pixel illustration with smooth continuous motion and SHALL target portrait mobile proportions. Wider displays SHALL preserve the portrait camera framing and use surrounding space for scenery without stretching geometry or exposing additional routes. Cinematics and the summit view SHALL be composed for portrait.
 
 #### Scenario: Wide display framing
 - **WHEN** the game is displayed on a wide screen
-- **THEN** the portrait gameplay corridor retains its proportions and route visibility
+- **THEN** the portrait viewport retains its proportions and route visibility, while navigating a wider world
 - **AND** scenic margins fill the surrounding space
+
+### Requirement: One composable open mountain
+The world SHALL span multiple portrait screens horizontally and vertically, with a broad cone base narrowing to a summit. The ball SHALL start at a seeded random position near the base center. Only mountain terrain boundaries SHALL constrain movement; viewport edges SHALL NOT collide. The camera SHALL follow both axes through persistent world-anchored scenery. Natural objects SHALL express pinball functions.
+
+#### Scenario: Lateral exploration
+- **WHEN** the ball crosses the edge of its previous camera view
+- **THEN** the camera reveals adjacent terrain in the same world without a collision at that screen edge
+- **AND** revisiting a place retains its scenery anchors and interaction state
+
+#### Scenario: Animal cave
+- **WHEN** the ball enters a cave mouth
+- **THEN** it is briefly hidden inside and forcefully ejected with an animal-claw cue
+- **AND** a cooldown prevents immediate recapture

@@ -1,9 +1,9 @@
-# Initial prototype status
+# Small open-mountain proof
 
-The initial Flutter/Flame web scaffold is a foundation for design review.
+The prototype now uses a seeded 1260×2000 world: roughly three portrait view widths across its base and a few screens uphill. The cone narrows to a summit ledge. The camera follows both x and y; screen edges never participate in collisions. Spawn varies near the base center. The whole small model stays loaded.
 
-Implemented: seated swinging hiker illustration, start input, timed introduction state, one ball under fixed-step gravity, deterministic repeated terraces with seeded obstacle offsets, side-group controls, basic scrolling/parallax and altitude palette changes, base restart, top-entry summit detection, persistent summit scene and a Restart button after three seconds that reloads the web page. Pointer cancellation, focus loss and app lifecycle release inputs.
+World composition is persistent and independent of the camera: indexed scenery patches, separate cosmetic randomness, altitude biome weights, grounded vegetation and actual cave/waterfall landmark positions. This applies Ranitas's layer ownership, stable anchors and independent motion principles to one navigable world instead of separate pond compositions.
 
-Simplifications: flippers are terrace collision surfaces with active/passive impulses, not pivoting rigid bodies. The course is a narrow repeated corridor, not the proposed open route graph. Intro and outro are state/timer placeholders with scene swaps, not finished cinematics. Summit detection checks entry, not settled reception. Drawn scenery is illustrative, not approved pixel artwork. No wildlife, trick-shot transport, authored summit panorama, real seed variety or validated 5–15 minute balance is present yet. Camera framing and speed limits require moving review.
+Branches act as grouped flippers, trees and rocks deflect, waterfalls launch, and caves capture then eject the ball with a claw cue. Cave entry uses swept segment-circle detection and an ejection cooldown. The summit requires entry from above and a short settle before the persistent outro. Base falls reset the run. No score, lives or checkpoints.
 
-The design and OpenSpec describe the intended destination. Automated checks establish basic scaffold behavior only; they do not establish playability, visual quality or comfort on phones. Production Cloudflare deployment has not been performed.
+Remaining simplifications: branches use arcade impulses rather than rigid-body hinges; route generation still uses provisional rows across the cone rather than validated organic templates. Small-seed automated successes are not proof that every seed is enjoyable or completable. The scenery is a compact proof kit with procedural animation, not the final production mountain. Camera transitions, fauna reactions, optional transports and 5–15 minute tuning remain future work.

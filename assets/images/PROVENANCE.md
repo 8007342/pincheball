@@ -1,0 +1,11 @@
+# Mountain proof kit
+
+Created for Pincheball on 2026-10-28 with the standard built-in `image_gen` tool after the local forge image capability proved unavailable. This is not output from the experimental local backend. No sibling artwork was copied.
+
+`mountain-kit.png` is a 1254×1254 RGBA illustration containing a pine, mossy boulder, cave and flowering shrub. The renderer uses explicit source rectangles because the generated layout did not follow exact equal grid cells. Source art stays unchanged; scene instances and source rectangles compose it at draw time. Terrain, branch flippers, waterfall motion, small plants, ball, hiker, atmospheric layers and claw animation are authored in code.
+
+Prompt:
+
+> Use case: stylized-concept. Asset type: small 2D game modular scenery sprite sheet, transparent background. Create ONE 1024x1024 image precisely arranged as a 2 column by 2 row grid of four separate centered assets, each inside its own 512x512 cell with at least 45px transparent margin and NO overlap: top left a lush alpine pine tree with textured foliage and visible rooted trunk, top right a mossy gray angular mountain boulder, bottom left a dark cave mouth framed by mossy rocks with a clearly readable black opening, bottom right a small leafy shrub with wildflowers. Rich hand-placed pixel illustration, limited teal forest moss ochre palette, warm afternoon highlights, cool blue shadows, charming atmospheric adventure game art. Frontal slightly elevated 2.5D view. Clean readable individual silhouettes. Assets float independently on actual transparent alpha. No terrain background, no text, no labels, no grid lines, no shadows extending outside cells. Each asset fills most of its cell while respecting margin. Pixel clusters with exquisite little detail, no smooth vector shapes, no blur. This is a mountain hiking pinball world's composable decoration kit.
+
+The image was visually inspected and transparency checked. Fine source texture, exact sprite pivots and snow variants remain proof-quality; production art will need stricter silhouettes and scale matching. Original generator source is retained under the Codex generated-images directory, and the consumed file lives in the repository.
